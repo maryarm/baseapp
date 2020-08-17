@@ -1,7 +1,7 @@
 // tslint:disable-next-line
 import { call, put, takeLatest } from 'redux-saga/effects';
+import { sendError } from '../../../';
 import { API, RequestOptions } from '../../../../api';
-import { alertPush } from '../../alert';
 import {
     marketsData,
     marketsError,
@@ -32,7 +32,7 @@ export function* marketsFetchSaga() {
         yield put(setCurrentMarketIfUnset(markets[0]));
     } catch (error) {
         yield put(marketsError());
-        yield put(alertPush({message: error.message, code: error.code, type: 'error'}));
+        yield put(sendError(error, 'alert'));
     }
 }
 
@@ -52,6 +52,6 @@ export function* tickersSaga(action: MarketsTickersFetch) {
         }
     } catch (error) {
         yield put(marketsTickersError());
-        yield put(alertPush({message: error.message, code: error.code, type: 'error'}));
+        yield put(sendError(error, 'alert'));
     }
 }

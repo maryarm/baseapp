@@ -11564,6 +11564,11 @@ redux-saga@^0.16.2:
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
   integrity sha512-iIjKnRThI5sKPEASpUvySemjzwqwI13e3qP7oLub+FycCRDysLSAOwt958niZW6LhxfmS6Qm1BzbU70w/Koc4w==
 
+redux-sentry-middleware@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/redux-sentry-middleware/-/redux-sentry-middleware-0.1.8.tgz#29f71821c1fb87d4ebcb8f76067fea3c3738a64c"
+  integrity sha512-xubpYH9RgE31tZUESeRW5agwQa19Yd6Gy+4iO09raW/2TITPO5fhJdXpVwJfpGMbIYhEmHFqE2wD5Lnz7YtAeA==
+
 redux@^4.0.0, redux@^4.0.1:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"

@@ -1,9 +1,7 @@
 // tslint:disable-next-line no-submodule-imports
 import { call, put } from 'redux-saga/effects';
+import { sendError } from '../../../';
 import { API, RequestOptions } from '../../../../api';
-import {
-    alertPush,
-} from '../../../public/alert';
 import {
     geetestCaptchaData,
     geetestCaptchaError,
@@ -21,6 +19,6 @@ export function* geetestCaptchaSaga(action: GeetestCaptchaFetch) {
         yield put(geetestCaptchaData(keys));
     } catch (error) {
         yield put(geetestCaptchaError(error));
-        yield put(alertPush(error));
+        yield put(sendError(error, 'alert'));
     }
 }

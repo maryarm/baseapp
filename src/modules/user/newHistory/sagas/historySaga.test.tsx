@@ -1,8 +1,12 @@
 import MockAdapter from 'axios-mock-adapter';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
-import { mockNetworkError, setupMockAxios, setupMockStore } from '../../../../helpers/jest';
-import { alertPush, rootSaga } from '../../../../modules/index';
+import {
+    mockNetworkError,
+    setupMockAxios,
+    setupMockStore,
+} from '../../../../helpers/jest';
+import { rootSaga } from '../../../../modules/index';
 import { failNewHistory, fetchNewHistory, successNewHistory } from '../actions';
 
 
@@ -64,7 +68,6 @@ describe('History saga', () => {
     const expectedActionsError = [
         fetchNewHistory(fakeRequest),
         failNewHistory(error),
-        alertPush(fakeError),
     ];
 
     it('should fetch currency deposit + withdraw history in success flow', async () => {

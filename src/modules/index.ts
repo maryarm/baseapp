@@ -8,6 +8,7 @@ import { ColorThemeState } from './public/colorTheme';
 import { ConfigsState, rootConfigsSaga } from './public/configs';
 import { CurrenciesState, rootCurrenciesSaga } from './public/currencies';
 import { CustomizationState, rootCustomizationSaga } from './public/customization';
+import { ErrorHandlerState, rootErrorHandlerSaga } from './public/errorHandler';
 import { GridLayoutState } from './public/gridLayout';
 import { LanguageState } from './public/i18n';
 import { KlineState, rootKlineFetchSaga } from './public/kline';
@@ -50,6 +51,7 @@ export * from './public/colorTheme';
 export * from './public/configs';
 export * from './public/currencies';
 export * from './public/customization';
+export * from './public/errorHandler';
 export * from './public/i18n';
 export * from './public/kline';
 export * from './public/alert';
@@ -84,6 +86,7 @@ export interface RootState {
         rgl: GridLayoutState;
         i18n: LanguageState;
         kline: KlineState;
+        errorHandler: ErrorHandlerState;
         markets: MarketsState;
         memberLevels: MemberLevelsState;
         orderBook: OrderBookState;
@@ -132,6 +135,7 @@ export function* rootSaga() {
         call(rootCurrenciesSaga),
         call(rootCustomizationSaga),
         call(rootCustomizationUpdateSaga),
+        call(rootErrorHandlerSaga),
         call(rootEmailVerificationSaga),
         call(rootGeetestCaptchaSaga),
         call(rootHandleAlertSaga),

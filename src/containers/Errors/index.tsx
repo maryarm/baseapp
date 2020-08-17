@@ -11,7 +11,9 @@ interface ErrorWrapperProps {
     children: React.ReactNode;
 }
 
-class Errors extends React.Component<ErrorWrapperProps & InjectedIntlProps, ErrorWrapperState> {
+type ErrorProps = ErrorWrapperProps & InjectedIntlProps;
+
+class HandleErrorWrapper extends React.Component<ErrorProps, ErrorWrapperState> {
     constructor(props) {
         super(props);
 
@@ -46,4 +48,4 @@ class Errors extends React.Component<ErrorWrapperProps & InjectedIntlProps, Erro
     }
 }
 
-export const ErrorWrapper = injectIntl(Errors);
+export const ErrorWrapper = injectIntl(HandleErrorWrapper);
